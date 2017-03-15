@@ -82,7 +82,7 @@ if (!is_null($events['events'])) {
 			
 			$mqtt = new phpMQTT("mqtt.espert.io", 1883, "clientId-Zj4czhDt7E"); //Change client name to something unique
 			if ($mqtt->connect()) {
-				$mqtt->publish("ESPert/14366171","Hello World! at ".date("r"),0);
+				$mqtt->publish("ESPert/14366171/beacon","Hello World! at ".date("r"),0);
 				$mqtt->close();
 			}
 		}
