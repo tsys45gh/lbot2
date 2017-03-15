@@ -81,7 +81,7 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 			
 			$mqtt = new phpMQTT("m10.cloudmqtt.com", 19518, "clientId-CdGZeZUz5f"); //Change client name to something unique
-			if ($mqtt->connect()) {
+			if ($mqtt->connect(true,null,'eqvihjxj','Ki2b6SmTWqgM')) {
 				$mqtt->publish("testtopic/beacon","Hello World! at ".date("r"),0);
 				$mqtt->close();
 			}
