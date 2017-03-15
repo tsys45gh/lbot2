@@ -1,4 +1,6 @@
 <?php
+require("phpMQTT.php");
+
 $access_token = 'l+XJmEK4S3PQW9NQRGhnqFff7WmFj9k2MMMGrif2EsWALWh+cn6URu3l0dEjpphbjHyk3013gsq/wgEp5lMBQhWtUsPK0D8VbmjlBOg4W4ST9ipMQ8EuW7HAZVHglPn4OIDbufKT2VEkKTet+n5lKgdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
@@ -77,6 +79,12 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
+			
+			$mqtt = new phpMQTT("mqtt.espert.io", 1883, "clientId-Zj4czhDt7E"); //Change client name to something unique
+			if ($mqtt->connect()) {
+				$mqtt->publish("ESPert/14366171","Hello World! at ".date("r"),0);
+				$mqtt->close();
+			}
 		}
 	}
 }
