@@ -48,9 +48,9 @@ if (!is_null($events['events'])) {
 		}
 		if($event['type'] == 'beacon'){
 			$text = $event['source']['userId'];
-			$text .= ':'.$event['beacon']['hwid'];
-			$text .= ':'.$event['beacon']['type'];
-			$text .= ':xxxx';
+			$text .= '|'.$event['beacon']['hwid'];
+			$text .= '|'.$event['beacon']['type'];
+			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -82,7 +82,7 @@ if (!is_null($events['events'])) {
 			
 			$mqtt = new phpMQTT("m10.cloudmqtt.com", 19518, "clientId-CdGZeZUz5f"); //Change client name to something unique
 			if ($mqtt->connect(true,null,'eqvihjxj','Ki2b6SmTWqgM')) {
-				$mqtt->publish("testtopic/beacon","Hello World! at ".date("r"),0);
+				$mqtt->publish("testtopic/beacon",$text,0);
 				$mqtt->close();
 			}
 		}
