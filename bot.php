@@ -47,6 +47,7 @@ if (!is_null($events['events'])) {
 			$text = $event['source']['userId'];
 			$text .= ':'.$event['beacon']['hwid'];
 			$text .= ':'.$event['beacon']['type'];
+			$text .= ':xxxx';
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
