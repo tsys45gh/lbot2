@@ -1,3 +1,3 @@
 <?php
-echo "new bot18";
+echo "new bot20";
 ?>
