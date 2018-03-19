@@ -11,7 +11,7 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {
 	$mqtt = new phpMQTT("m10.cloudmqtt.com", 19518, "clientId-CdGZeZUz5f"); //Change client name to something unique
 	if ($mqtt->connect(true,null,'eqvihjxj','Ki2b6SmTWqgM')) {
-		$mqtt->publish("bot2018/ev",$events,0);
+		$mqtt->publish("bot2018/ev","xxxx",0);
 		$mqtt->close();
 	};
 
