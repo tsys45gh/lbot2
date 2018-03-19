@@ -9,12 +9,13 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
+	foreach ($events['events'] as $event) {
 	$mqtt = new phpMQTT("m10.cloudmqtt.com", 19518, "clientId-CdGZeZUz5f"); //Change client name to something unique
 	if ($mqtt->connect(true,null,'eqvihjxj','Ki2b6SmTWqgM')) {
-		$mqtt->publish("bot2018/ev",$content,0);
+		$mqtt->publish("bot2018/ev",json_encode($event),0);
 		$mqtt->close();
 	};
-
+};
 }
 echo "OK";
 ?>
