@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wellness</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body><div>
+    <div class="header-blue">
+        <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+            <div class="container"><a class="navbar-brand" href="#" style="font-size:36px;">SNH Wellness</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1"></div>
+            </div>
+        </nav>
+        <div class="container hero" style="margin-top:3px;">
+            <div class="row">
+                <div class="col"><span style="color:#f4ed7c;margin-right:5px;">HN:</span><input type="search" name="search" id="hn" class="search-field" style="background-color:#c6ad0f;margin-right:10px; " onkeydown="hnChange(window.event);"><i class="fa fa-search" style="color:#f4ed7c;" onclick="sendHN(this);"></i></div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-6 col-lg-6 col-xl-6 offset-xl-1" style="margin-left:10px;color:#ffffff;">
+                    <h1 id="ptName" style="margin-top:5px;margin-bottom:-7px;">name</h1>
+                    <div class="row">
+                        <div class="col-3 offset-0 flex-row" style="padding-right:0px;padding-left:0px;"><strong class="text-white" style="font-size:25px;">DOB:</strong></div>
+                        <div class="col-5 offset-0 flex-row" style="padding-right:0px;padding-left:0px;margin-left:10px;"><strong class="text-white" id="dob" style="font-size:25px;"></strong></div>
+                        <div class="col-2 offset-0 flex-row" style="padding-right:0px;padding-left:0px;"><strong class="text-white" style="font-size:25px;">Age:</strong></div>
+                        <div class="col-1 offset-0 flex-row" style="padding-right:0px;padding-left:0px;margin-left:0;"><strong class="text-white" id="age" style="font-size:25px;"></strong></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 offset-0 flex-row" style="padding-right:0px;padding-left:0px;"><strong class="text-white" style="font-size:25px;">Program:</strong></div>
+                        <div class="col-8 offset-0 flex-row" style="padding-right:0px;padding-left:0px;margin-left:10px;"><strong class="text-white" id="program" style="font-size:25px;"></strong></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 col-md-2 col-lg-3 col-xl-1 offset-0 flex-row" style="padding-right:0px;padding-left:0px;"><span style="color:#f4ed7c;">Temp</span></div>
+                        <div class="col-1 col-xl-1 offset-0 flex-row" style="padding-right:0px;padding-left:0px;margin-left:10px;"><strong class="text-white" id="temp" style="font-size:25px;"></strong></div>
+                        <div class="col-1 col-lg-1 col-xl-1" style="padding-right:0px;padding-left:0;"><span style="color:#f4ed7c;">P</span></div>
+                        <div class="col-1 col-xl-1 offset-0 flex-row" style="padding-right:0px;padding-left:0px;margin-left:10px;"><strong class="text-white" id="pulse" style="font-size:25px;"></strong></div>
+                        <div class="col-md-2 col-lg-1 col-xl-1"><span style="color:#f4ed7c;">R</span></div>
+                        <div class="col-1 col-xl-1 offset-0 flex-row" style="padding-right:0px;padding-left:0px;margin-left:10px;"><strong class="text-white" id="resp" style="font-size:25px;"></strong></div>
+                        <div class="col-3 col-md-2 col-lg-1 col-xl-1 offset-0 flex-row" style="padding-right:0px;padding-left:0px;"><span style="color:#f4ed7c;">BP</span></div>
+                        <div class="col-1 col-xl-2 offset-0 flex-row" style="padding-right:0px;padding-left:0px;margin-left:10px;"><strong class="text-white" id="bp" style="font-size:25px;"></strong></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 col-md-2 col-xl-1 offset-0 flex-row" style="padding-right:0px;padding-left:0px;"><span style="color:#f4ed7c;">BW</span></div>
+                        <div class="col-1 col-xl-1 offset-0 flex-row" style="padding-right:0px;padding-left:0px;margin-left:10px;"><strong class="text-white" id="bw" style="font-size:25px;"></strong></div>
+                        <div class="col-md-2 col-lg-1 col-xl-1" style="padding-right:0px;padding-left:0;"><span style="color:#f4ed7c;">Ht</span></div>
+                        <div class="col-1 col-xl-1 offset-0 flex-row" style="padding-right:0px;padding-left:0px;margin-left:10px;"><strong class="text-white" id="ht" style="font-size:25px;"></strong></div>
+                        <div class="col-md-2 col-lg-2 col-xl-2"><span style="color:#f4ed7c;">BMI</span></div>
+                        <div class="col-1 col-xl-1 offset-0 flex-row" style="padding-right:0px;padding-left:0px;margin-left:10px;"><strong class="text-white" id="bmi" style="font-size:25px;"></strong></div>
+                    </div>
+                    <hr style="background-color:#ffffff;">
+                    <div class="row" style="background-color:rgba(0,0,0,0.1);">
+                        <div class="col-1 col-xl-1"><span>1</span></div>
+                        <div class="col-sm-11 col-xl-11">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_coupon"><label class="form-check-label" for="formCheck-1">คูปองทานอาหาร 2 ใบ</label></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1 col-xl-1"><span>2</span></div>
+                        <div class="col-11 col-xl-11">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_blood"><label class="form-check-label" for="formCheck-1">เจาะเลือด</label></div>
+                        </div>
+                    </div>
+                    <div class="row" style="background-color:rgba(0,0,0,0.1);">
+                        <div class="col-1 col-xl-1"><span>3</span></div>
+                        <div class="col-11 col-xl-11">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_urine"><label class="form-check-label" for="formCheck-1">เก็บปัสสาวะ (เก็บหลังทำ U/S Lower Abdomen)</label></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1 col-xl-1"><span>4</span></div>
+                        <div class="col-11 col-xl-11">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_stool"><label class="form-check-label" for="formCheck-1">เก็บอุจจาระ</label></div>
+                        </div>
+                    </div>
+                    <div class="row" style="background-color:rgba(0,0,0,0.1);">
+                        <div class="col-1 col-xl-1"><span>5</span></div>
+                        <div class="col-3 col-xl-3">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_ekg"><label class="form-check-label" for="formCheck-1">EKG</label></div>
+                        </div>
+                        <div class="col-3 col-xl-3">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_abi"><label class="form-check-label" for="formCheck-1">ABI</label></div>
+                        </div>
+                        <div class="col-3 col-xl-3">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_inbody"><label class="form-check-label" for="formCheck-1">Inbody</label></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1 col-lg-1 col-xl-1"><span>6</span></div>
+                        <div class="col-xl-11">
+                            <div class="row">
+                                <div class="col-9 col-lg-4 col-xl-7 offset-lg-1 offset-xl-0"><span>Imaging</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 col-lg-4 col-xl-4 offset-lg-1">
+                                    <div class="form-check" style="width:102px;"><input class="form-check-input" type="checkbox" id="fck_cxr"><label class="form-check-label" for="formCheck-1">Chest XRay</label></div>
+                                </div>
+                                <div class="col-4 col-lg-3 col-xl-3">
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_usup"><label class="form-check-label" for="formCheck-1">U/S Upper</label></div>
+                                </div>
+                                <div class="col-4 col-xl-4">
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_uslo"><label class="form-check-label" for="formCheck-1">U/S Lower</label></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 col-lg-4 col-xl-4 offset-lg-1">
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_mammo"><label class="form-check-label" for="formCheck-1">Mammography</label></div>
+                                </div>
+                                <div class="col-4 col-xl-4">
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_bone"><label class="form-check-label" for="formCheck-1">Bone Density</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="background-color:rgba(0,0,0,0.1);">
+                        <div class="col-1 col-xl-1"><span>7</span></div>
+                        <div class="col-11 col-xl-11">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_fibro"><label class="form-check-label" for="formCheck-1">Med: Fibro Scan ** งดน้ำ-อาหาร จนกว่าจะได้ทำ**</label></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1 col-xl-1"><span>8</span></div>
+                        <div class="col-11 col-xl-11">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_pulmo"><label class="form-check-label" for="formCheck-1">Med: Pulmonary Function Test</label></div>
+                        </div>
+                    </div>
+                    <div class="row" style="background-color:rgba(0,0,0,0.1);">
+                        <div class="col-1 col-xl-1"><span>9</span></div>
+                        <div class="col-11 col-xl-11">
+                            <div class="form-check float-left" style="width:120px;"><input class="form-check-input" type="checkbox" id="fck_est"><label class="form-check-label" for="formCheck-1">Heart: EST at&nbsp;</label></div><input type="time" style="width:94px;margin-left:-4px;height:24px;"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1 col-xl-1"><span>10</span></div>
+                        <div class="col-11 col-xl-11">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_thin"><label class="form-check-label" for="formCheck-1">OBG: Thin Prep + HPV</label></div>
+                        </div>
+                    </div>
+                    <div class="row" style="background-color:rgba(0,0,0,0.1);">
+                        <div class="col-1 col-xl-1"><span>11</span></div>
+                        <div class="col-11 col-xl-11">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_eye"><label class="form-check-label" for="formCheck-1">EYE: ตรวจสุขภาพตา พบแพทย์</label></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1 col-xl-1"><span>12</span></div>
+                        <div class="col-11 col-xl-11">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_dent"><label class="form-check-label" for="formCheck-1">Dental: ตรวจสุขภาพช่องปาก และ ทัตกรรม</label></div>
+                        </div>
+                    </div>
+                    <div class="row" style="background-color:rgba(0,0,0,0.1);">
+                        <div class="col-1 col-xl-1"><span>13</span></div>
+                        <div class="col-11 col-xl-11">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_antiage"><label class="form-check-label" for="formCheck-1">WEB: Anti-Aging</label></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1 col-xl-1"><span>14</span></div>
+                        <div class="col-11 col-xl-11">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_nut"><label class="form-check-label" for="formCheck-1">Nutrition: นักกำหนดอาหาร</label></div>
+                        </div>
+                    </div>
+                    <div class="row" style="background-color:rgba(0,0,0,0.1);">
+                        <div class="col-1 col-xl-1"><span>15</span></div>
+                        <div class="col-11 col-xl-11">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_wnc"><label class="form-check-label" for="formCheck-1">WNC: PE</label></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1 col-xl-1"><span>16</span></div>
+                        <div class="col-xl-11">
+                            <div class="row">
+                                <div class="col-4 col-lg-3 col-xl-3"><span>ส่งการเงินชั้น&nbsp;</span></div>
+                                <div class="col-lg-4"><input type="text" style="height:24px;"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 col-xl-4">
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_payall"><label class="form-check-label" for="formCheck-1">ชำระเองทั้งหมด</label></div>
+                                </div>
+                                <div class="col-4 col-xl-4">
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_paypart"><label class="form-check-label" for="formCheck-1">ชำระบางส่วน</label></div>
+                                </div>
+                                <div class="col-4 col-xl-4">
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="fck_voucher"><label class="form-check-label" for="formCheck-1">Voucher Free</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-xl-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder noprint" style="margin-left: 20px;">
+                    <div class="row" style="height: 350px;">
+                    <div class="iphone mockup" id="svg01">
+                    </div>
+                    </div>
+                    <div class="row">
+                    <!--<div class="iphone-mockup" id="sec01">-->
+
+                        <img id="lung" class="col-md-2 no-flash border border-white rounded" src="./assets/img/lung.png">
+                        <img id="foot" class="col-md-2 no-flash border border-white rounded" src="./assets/img/foot.png">
+                        <img id="us" class="col-md-2 no-flash border border-white rounded" src="./assets/img/ultrasound02.png">
+                        <img id="ekg" class="col-md-2 no-flash border border-white rounded" src="./assets/img/ekg.png">
+                        <img id="eye" class="col-md-2 no-flash border border-white rounded" src="./assets/img/eye.png">
+                        <img id="carotid" class="col-md-2 no-flash border border-white rounded" src="./assets/img/carotid_doppler.png">
+                    </div>
+                    <div class="row">
+                        <img id="abi" class="col-md-2 no-flash border border-white rounded" src="./assets/img/man.png">
+                        <img id="hba1c" class="col-md-2 no-flash border border-white rounded" src="./assets/img/blood_test.png">
+                        <img id="bonedense" class="col-md-2 no-flash border border-white rounded" src="./assets/img/bone_density.png">
+                        <img id="colon" class="col-md-2 no-flash border border-white rounded" src="./assets/img/colon02.png">
+                        <img id="ct" class="col-md-2 no-flash border border-white rounded" src="./assets/img/ct.png">
+                        <img id="retina" class="col-md-2 no-flash border border-white rounded" src="./assets/img/retina.png">
+                    </div>
+                    <div class="row">
+                        <img id="andro" class="col-md-2 no-flash border border-white rounded" src="./assets/img/andropause.png">
+                        <img id="immune" class="col-md-2 no-flash border border-white rounded" src="./assets/img/immunization.png">
+                    <!--</div>-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-11"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/uibuilder/socket.io/socket.io.js"></script>
+<!-- Note no leading / -->
+<!-- OPTIONAL: JQuery can be removed if not required -->
+<!--<script src="./vendor/jquery/dist/jquery.min.js"></script>-->
+<!-- REQUIRED: Sets up Socket listeners and the msg object -->
+<script src="./uibuilderfe.min.js"></script>
+<!-- OPTIONAL: You probably want this. Put your custom code here -->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>-->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<script src="./index.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>
