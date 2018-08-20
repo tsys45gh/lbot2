@@ -21,6 +21,6 @@ switch($hn){
     
     
 }
-
+exit;
 
 ?>
